@@ -1,5 +1,6 @@
 [workspace]
 members = [
+    "hanzo-engine",
     "mistralrs-server-core",
     "mistralrs-server",
     "mistralrs-core",
