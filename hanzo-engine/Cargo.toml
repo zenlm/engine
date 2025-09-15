@@ -1,0 +1,40 @@
+[package]
+name = "hanzo-engine"
+version = "0.6.0"
+edition = "2021"
+description = "Hanzo Engine - High-performance AI inference engine for LLMs and embeddings"
+homepage = "https://github.com/hanzoai/engine"
+repository = "https://github.com/hanzoai/engine"
+license = "MIT"
+
+[[bin]]
+name = "hanzo-engine"
+path = "src/main.rs"
+
+[dependencies]
+mistralrs = { path = "../mistralrs" }
+mistralrs-core = { path = "../mistralrs-core" }
+mistralrs-server-core = { path = "../mistralrs-server-core" }
+
+anyhow = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+clap = { workspace = true }
+tokio = { version = "1.47", features = ["full"] }
+axum = { workspace = true }
+tower = "0.5"
+tower-http = { version = "0.6", features = ["cors", "fs"] }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+dirs = "5.0"
+reqwest = { version = "0.12", features = ["json", "stream"] }
+futures = { workspace = true }
+indicatif = "0.17"
+hf-hub = { version = "0.3", features = ["tokio"] }
+
+[features]
+default = ["cuda", "flash-attn"]
+cuda = ["mistralrs-core/cuda"]
+metal = ["mistralrs-core/metal"]
+flash-attn = ["mistralrs-core/flash-attn"]
+mkl = ["mistralrs-core/mkl"]
