@@ -97,14 +97,24 @@ jobs:
       run: |
         cargo build --package hanzo-engine --release --target ${{ matrix.target }} --features ${{ matrix.features }}
 
+    - name: Rename binary to hanzoai
+      shell: bash
+      run: |
+        cd target/${{ matrix.target }}/release
+        if [[ "${{ matrix.os }}" == "windows-latest" ]]; then
+          mv hanzo-engine.exe hanzoai.exe
+        else
+          mv hanzo-engine hanzoai
+        fi
+
     - name: Package binary
       shell: bash
       run: |
         cd target/${{ matrix.target }}/release
         if [[ "${{ matrix.os }}" == "windows-latest" ]]; then
-          7z a ../../../${{ matrix.name }}.zip hanzo-engine.exe
+          7z a ../../../${{ matrix.name }}.zip hanzoai.exe
         else
-          tar -czf ../../../${{ matrix.name }}.tar.gz hanzo-engine
+          tar -czf ../../../${{ matrix.name }}.tar.gz hanzoai
         fi
 
     - name: Upload artifacts
