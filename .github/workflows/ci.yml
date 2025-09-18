@@ -29,6 +29,7 @@ jobs:
       - uses: actions-rs/cargo@v1
         with:
           command: check
+          args: --package hanzo-engine
 
   test:
     name: Test Suite
@@ -97,6 +98,25 @@ jobs:
         with:
           command: doc
           args: --workspace
+
+  hanzo-engine:
+    name: Build Hanzo Engine
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          override: true
+      - name: Build hanzo-engine
+        run: cargo build --package hanzo-engine --release
+      - name: Test hanzo-engine
+        run: cargo test --package hanzo-engine
+      - name: Verify binary
+        run: |
+          ./target/release/hanzo-engine --version
+          ./target/release/hanzo-engine --help
 
   typos:
     name: Typos
