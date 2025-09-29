@@ -1,0 +1,119 @@
+# Zen Research Authors
+
+## Organization Structure
+
+**Zen Research** is a multi-organizational decentralized autonomous organization (DAO) operating under **Zoo Labs Inc**, a 501(c)(3) non-profit organization based in San Francisco, California, dedicated to open AI research that is environmentally friendly and sustainable.
+
+## Mission
+
+Zen Research is committed to developing open-source, eco-friendly AI technologies that advance the state of the art in multimodal AI while minimizing environmental impact and maximizing accessibility.
+
+## Core Values
+
+- **Open Science**: All research and models are open-source under Apache 2.0
+- **Environmental Responsibility**: Focus on efficient, eco-friendly AI models
+- **Accessibility**: Models designed for edge devices to production-scale deployment
+- **Transparency**: Open research process and community collaboration
+- **Innovation**: Pushing boundaries of hypermodal AI capabilities
+
+## Organizational Affiliations
+
+### Zoo Labs Inc (Parent Organization)
+- **Type**: 501(c)(3) Non-Profit Organization
+- **Location**: San Francisco, California, USA
+- **Mission**: Advancing open AI research for the benefit of humanity
+- **Focus Areas**:
+  - Digital animal twins and conservation AI
+  - Human AI clones for medical research and education
+  - Environmental sustainability in AI
+  - Open-source AI infrastructure
+
+### Zen Research DAO
+- **Type**: Decentralized Autonomous Organization
+- **Governance**: Multi-stakeholder community governance
+- **Structure**: Decentralized research collective
+- **Contributors**: Researchers, engineers, and scientists worldwide
+
+## Contributing Organizations
+
+The Zen Research ecosystem is supported by contributions from:
+- Academic institutions
+- Research laboratories
+- Independent researchers
+- Open-source community contributors
+- Industry partners committed to open AI
+
+## Model Family
+
+The Zen AI model family represents collaborative efforts across multiple organizations:
+
+### Language Models
+- **zen-nano** (0.6B): Edge-optimized language model
+- **zen-eco** (4B): Efficient instruction-following models
+- **zen-agent** (4B): Tool-calling and function execution
+
+### 3D & World Generation
+- **zen-3d** (3.3B): Controllable 3D asset generation
+- **zen-voyager**: Camera-controlled world exploration
+- **zen-world**: Large-scale world simulation
+
+### Video Generation
+- **zen-director** (5B): Text/image-to-video synthesis
+- **zen-video**: Professional video generation
+- **zen-video-i2v**: Image-to-video animation
+
+### Audio Generation
+- **zen-musician** (7B): Music generation from lyrics
+- **zen-foley**: Video-to-audio Foley sound effects
+
+### Infrastructure
+- **zen-gym**: Unified training platform
+- **zen-engine**: High-performance inference engine
+
+## Credits and Acknowledgments
+
+Zen Research builds upon and acknowledges the groundbreaking work of:
+
+- **Qwen Team** (Alibaba): Base language model architectures
+- **YuE Team** (HKUST/M-A-P): Music generation foundations (zen-musician)
+- **LLaMA Factory** (hiyouga): Training infrastructure (zen-gym)
+- **mistral.rs** (Eric Buehler): Inference engine (zen-engine)
+- **Tencent Hunyuan Team**: Multimodal generation models
+  - Hunyuan3D-Omni (zen-3d)
+  - HunyuanWorld-Voyager (zen-voyager)
+  - HunyuanWorld-1.0 (zen-world)
+  - HunyuanVideo (zen-video)
+  - HunyuanVideo-I2V (zen-video-i2v)
+  - HunyuanVideo-Foley (zen-foley)
+
+## License
+
+All Zen Research projects are released under the **Apache License 2.0**, promoting open collaboration and commercial use while protecting contributors.
+
+## Contact
+
+- **Organization**: Zoo Labs Inc / Zen Research DAO
+- **GitHub**: https://github.com/zenlm
+- **HuggingFace**: https://huggingface.co/zenlm
+- **Location**: San Francisco, California, USA
+- **Type**: 501(c)(3) Non-Profit Organization
+
+## Contributing
+
+We welcome contributions from researchers, engineers, and AI enthusiasts worldwide. See individual project repositories for contribution guidelines.
+
+## Funding and Support
+
+Zen Research operates as a non-profit initiative under Zoo Labs Inc (501(c)(3)), relying on:
+- Charitable donations and grants
+- Academic partnerships
+- Community contributions
+- Sustainable compute partnerships
+
+All funds support open AI research, infrastructure, and environmental sustainability initiatives.
+
+---
+
+**Copyright 2025 Zen Research Authors**
+
+Licensed under the Apache License, Version 2.0
