@@ -8,7 +8,7 @@ Native AI inference engine for Zen models - Blazingly fast LLM, embedding, and m
 </h3>
 
 <p align="center">
-| <a href="https://github.com/zenlm/zen-engine"><b>GitHub</b></a> | <a href="https://zenlm.ai"><b>Zen AI</b></a> | <a href="https://docs.zenlm.ai/engine"><b>Documentation</b></a> |
+| <a href="https://github.com/zenlm/zen-engine"><b>GitHub</b></a> | <a href="https://github.com/zenlm"><b>Zen AI</b></a> | <a href="https://huggingface.co/zenlm"><b>HuggingFace</b></a> |
 </p>
 
 <p align="center">
@@ -499,6 +499,17 @@ Apache 2.0 License - see [LICENSE](LICENSE) for details.
 }
 ```
 
+## Links
+
+- **GitHub**: https://github.com/zenlm/zen-engine
+- **Organization**: https://github.com/zenlm
+- **HuggingFace Models**: https://huggingface.co/zenlm
+- **Zen Gym** (Training): https://github.com/zenlm/zen-gym
+- **Zen Musician**: https://github.com/zenlm/zen-musician
+- **Zen 3D**: https://github.com/zenlm/zen-3d
+
 ---
 
 **Zen Engine** - Blazingly fast inference for all Zen models
+
+Part of the **[Zen AI](https://github.com/zenlm)** ecosystem.
