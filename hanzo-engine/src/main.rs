@@ -7,6 +7,7 @@ use tracing_subscriber;
 mod commands;
 mod config;
 mod server;
+mod embeddings;
 
 #[derive(Parser)]
 #[command(name = "hanzo-engine")]
@@ -559,11 +560,13 @@ mod server {
     use std::path::PathBuf;
     use std::sync::Arc;
     use tower_http::cors::CorsLayer;
+    use crate::embeddings::{EmbeddingEngine, EmbeddingRequest, EmbeddingResponse, EmbeddingData, EmbeddingUsage};
     
     struct ServerState {
         model: Option<String>,
         model_dir: PathBuf,
         ollama_compat: bool,
+        embedding_engine: Arc<EmbeddingEngine>,
     }
     
     pub async fn start_server(
@@ -573,10 +576,14 @@ mod server {
         ollama_compat: bool,
         model_dir: PathBuf,
     ) -> Result<()> {
+        // Initialize embedding engine
+        let embedding_engine = Arc::new(EmbeddingEngine::new()?);
+        
         let state = Arc::new(ServerState {
             model,
             model_dir,
             ollama_compat,
+            embedding_engine,
         });
         
         let app = Router::new()
@@ -634,20 +641,68 @@ mod server {
     }
     
     async fn embeddings(State(state): State<Arc<ServerState>>, Json(payload): Json<Value>) -> Json<Value> {
-        // TODO: Implement actual embedding generation
-        Json(json!({
-            "object": "list",
-            "data": [{
-                "object": "embedding",
-                "embedding": vec![0.1; 4096], // Placeholder for Qwen3-8B
-                "index": 0
-            }],
-            "model": "qwen3-embedding-8b",
-            "usage": {
-                "prompt_tokens": 10,
-                "total_tokens": 10
+        // Parse the request
+        let request: EmbeddingRequest = match serde_json::from_value(payload) {
+            Ok(req) => req,
+            Err(e) => {
+                return Json(json!({
+                    "error": {
+                        "message": format!("Invalid request: {}", e),
+                        "type": "invalid_request_error",
+                        "code": 400
+                    }
+                }));
             }
-        }))
+        };
+        
+        // Convert input to string array
+        let texts = request.input.to_string_array();
+        let num_texts = texts.len();
+        
+        // Generate embeddings
+        let embeddings_result = state.embedding_engine.generate_embeddings(texts).await;
+        
+        match embeddings_result {
+            Ok(embeddings) => {
+                // Build response
+                let mut data = Vec::new();
+                for (index, embedding) in embeddings.into_iter().enumerate() {
+                    // Apply dimension reduction if requested
+                    let final_embedding = if let Some(dim) = request.dimensions {
+                        embedding.into_iter().take(dim).collect()
+                    } else {
+                        embedding
+                    };
+                    
+                    data.push(EmbeddingData {
+                        object: "embedding".to_string(),
+                        index,
+                        embedding: final_embedding,
+                    });
+                }
+                
+                let response = EmbeddingResponse {
+                    object: "list".to_string(),
+                    data,
+                    model: request.model.unwrap_or_else(|| "snowflake-arctic-embed-l".to_string()),
+                    usage: EmbeddingUsage {
+                        prompt_tokens: num_texts * 10, // Estimate
+                        total_tokens: num_texts * 10,
+                    },
+                };
+                
+                Json(serde_json::to_value(response).unwrap_or(json!({})))
+            }
+            Err(e) => {
+                Json(json!({
+                    "error": {
+                        "message": format!("Embedding generation failed: {}", e),
+                        "type": "internal_error",
+                        "code": 500
+                    }
+                }))
+            }
+        }
     }
     
     async fn chat_completions(State(state): State<Arc<ServerState>>, Json(payload): Json<Value>) -> Json<Value> {
