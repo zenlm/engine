@@ -33,7 +33,7 @@ indicatif = "0.17"
 hf-hub = { version = "0.3", features = ["tokio"] }
 
 [features]
-default = ["cuda", "flash-attn"]
+default = ["metal"]
 cuda = ["mistralrs-core/cuda"]
 metal = ["mistralrs-core/metal"]
 flash-attn = ["mistralrs-core/flash-attn"]
