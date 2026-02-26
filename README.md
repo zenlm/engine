@@ -88,7 +88,7 @@ curl -X POST http://localhost:3690/v1/chat/completions \
 curl -X POST http://localhost:3690/v1/embeddings \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "qwen3-embedding-8b",
+    "model": "zen-embedding-8b",
     "input": "Zen models are fast and efficient"
   }'
 ```
