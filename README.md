@@ -81,10 +81,10 @@ curl -X POST http://localhost:3690/v1/chat/completions \
   }'
 ```
 
-### Embeddings API (Qwen3-Embedding)
+### Embeddings API (Zen-Embedding)
 
 ```bash
-# Generate embeddings with Qwen3
+# Generate embeddings with Zen
 curl -X POST http://localhost:3690/v1/embeddings \
   -H "Content-Type: application/json" \
   -d '{
@@ -98,27 +98,27 @@ curl -X POST http://localhost:3690/v1/embeddings \
 ### Zen Model Family
 
 #### zen-nano (0.6B)
-- **Architecture**: Qwen3-0.6B
+- **Architecture**: Zen 0.6B
 - **Formats**: PyTorch, MLX, GGUF (Q2_K, Q4_K_M, Q8_0, F16)
 - **Use Case**: Edge devices, mobile, low-latency inference
 - **Memory**: 1-2GB
 
 #### zen-eco (4B)
 - **Variants**: instruct, thinking, agent
-- **Architecture**: Qwen3-4B
+- **Architecture**: Zen 4B
 - **Formats**: PyTorch, MLX, GGUF (Q2_K, Q4_K_M, Q5_K_M, Q8_0, F16)
 - **Use Case**: General purpose, balanced performance
 - **Memory**: 4-8GB
 
 #### zen-agent (4B)
-- **Architecture**: Qwen3-4B + tool-calling
+- **Architecture**: Zen 4B + tool-calling
 - **Dataset**: Salesforce/xlam-function-calling-60k
 - **Formats**: PyTorch, MLX, GGUF
 - **Use Case**: Tool use, function calling, API integration
 - **Memory**: 4-8GB
 
 #### zen-director (5B)
-- **Architecture**: Wan2.2-TI2V-5B
+- **Architecture**: Zen-Video
 - **Modality**: Text/Image → Video
 - **Formats**: PyTorch (Diffusion)
 - **Use Case**: Video generation
@@ -132,13 +132,13 @@ curl -X POST http://localhost:3690/v1/embeddings \
 - **Memory**: 16-24GB
 
 ### Embedding Models (Optimized)
-- **Qwen3-Embedding-8B**: 4096 dims, #1 on MTEB multilingual
-- **Qwen3-Embedding-4B**: 2048 dims, balanced performance
-- **Qwen3-Embedding-0.6B**: 1024 dims, lightweight
+- **Zen-Embedding-8B**: 4096 dims, #1 on MTEB multilingual
+- **Zen-Embedding-4B**: 2048 dims, balanced performance
+- **Zen-Embedding-0.6B**: 1024 dims, lightweight
 
 ### Reranker Models
-- **Qwen3-Reranker-4B**: Superior reranking quality
-- **Qwen3-Reranker-0.6B**: Lightweight reranking
+- **Zen-Reranker-4B**: Superior reranking quality
+- **Zen-Reranker-0.6B**: Lightweight reranking
 
 ## Model Management
 
