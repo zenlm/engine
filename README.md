@@ -112,7 +112,7 @@ curl -X POST http://localhost:3690/v1/embeddings \
 
 #### zen-agent (4B)
 - **Architecture**: Zen 4B + tool-calling
-- **Dataset**: Salesforce/xlam-function-calling-60k
+- **Dataset**: Function calling dataset (60k examples)
 - **Formats**: PyTorch, MLX, GGUF
 - **Use Case**: Tool use, function calling, API integration
 - **Memory**: 4-8GB
@@ -479,10 +479,6 @@ cargo build --release --features "cuda flash-attn"
 ## Contributing
 
 We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-## Credits
-
-Zen Engine is built on [mistral.rs](https://github.com/EricLBuehler/mistral.rs) by Eric Buehler. We thank the mistral.rs team for their excellent work on Rust-native LLM inference.
 
 ## License
 
