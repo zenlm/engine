@@ -1,6 +1,6 @@
-# Qwen 3: [`collection`](https://huggingface.co/collections/Qwen/qwen3-67dd247413f0e2e4f653967f)
+# 3: [`collection`](https://huggingface.co/collections//qwen3-67dd247413f0e2e4f653967f)
 
-The Qwen 3 family is a collection of hybrid reasoning MoE and non-MoE models ranging from 0.6b to 235b parameters.
+The 3 family is a collection of hybrid reasoning MoE and non-MoE models ranging from 0.6b to 235b parameters.
 
 ```
 ./mistralrs-server --isq 4 -i plain -m Qwen/Qwen3-8B
@@ -12,7 +12,7 @@ The Qwen 3 family is a collection of hybrid reasoning MoE and non-MoE models ran
 > Note: tool calling support is fully implemented for the Qwen 3 models, including agentic web search.
 
 ## Enabling thinking
-The Qwen 3 models are hybrid reasoning models which can be controlled at inference-time. **By default, reasoning is enabled for these models.** To dynamically control this, it is recommended to either add `/no_think` or `/think` to your prompt. Alternatively, you can specify the `enable_thinking` flag as detailed by the API-specific examples.
+The 3 models are hybrid reasoning models which can be controlled at inference-time. **By default, reasoning is enabled for these models.** To dynamically control this, it is recommended to either add `/no_think` or `/think` to your prompt. Alternatively, you can specify the `enable_thinking` flag as detailed by the API-specific examples.
 
 ## HTTP API
 You can find a more detailed example demonstrating enabling/disabling thinking [here](../examples/server/qwen3.py).

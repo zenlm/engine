@@ -20,8 +20,8 @@ We support the following models' tool calling in OpenAI-compatible and parse nat
 - Mistral Nemo
 - Hermes 2 Pro
 - Hermes 3
-- DeepSeek V2/V3/R1
-- Qwen 3
+- V2/V3/R1
+- 3
 
 All models that support tool calling will respond according to the OpenAI tool calling API.
 
