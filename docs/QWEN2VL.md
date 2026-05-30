@@ -1,6 +1,6 @@
-# Qwen 2 Vision Model: [`Qwen2-VL Collection`](https://huggingface.co/collections/Qwen/qwen2-vl-66cee7455501d7126940800d)
+# 2 Vision Model: [`Qwen2-VL Collection`](https://huggingface.co/collections//qwen2-vl-66cee7455501d7126940800d)
 
-Mistral.rs supports the Qwen2-VL vision model family, with examples in the Rust, Python, and HTTP APIs. ISQ quantization is supported to allow running the model with less memory requirements.
+Mistral.rs supports the -VL vision model family, with examples in the Rust, Python, and HTTP APIs. ISQ quantization is supported to allow running the model with less memory requirements.
 
 UQFF quantizations are also available.
 
@@ -14,7 +14,7 @@ The Rust API takes an image from the [image](https://docs.rs/image/latest/image/
 > Note: When using device mapping or model topology, only the text model and its layers will be managed. This is because it contains most of the model parameters. *The text model has 28 layers*.
 
 ## ToC
-- [Qwen 2 Vision Model: `Qwen2-VL Collection`](#qwen-2-vision-model-qwen2-vl-collection)
+- [ 2 Vision Model: `Qwen2-VL Collection`](#qwen-2-vision-model-qwen2-vl-collection)
   - [ToC](#toc)
   - [Interactive mode](#interactive-mode)
   - [HTTP server](#http-server)
@@ -25,7 +25,7 @@ The Rust API takes an image from the [image](https://docs.rs/image/latest/image/
 
 Mistral.rs supports interactive mode for vision models! It is an easy way to interact with the model.
 
-1) Start up interactive mode with the Qwen2-VL model
+1) Start up interactive mode with the -VL model
 
 > [!NOTE]
 > You should replace `--features ...` with one of the features specified [here](../README.md#supported-accelerators), or remove it for pure CPU inference.

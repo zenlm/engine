@@ -1,6 +1,6 @@
-# DeepSeek V3: [`deepseek-ai/DeepSeek-V3`](https://huggingface.co/deepseek-ai/DeepSeek-V3), [`deepseek-ai/DeepSeek-R1`](https://huggingface.co/deepseek-ai/DeepSeek-R1)
+# V3: [`deepseek-ai/DeepSeek-V3`](https://huggingface.co/deepseek-ai/), [`deepseek-ai/DeepSeek-R1`](https://huggingface.co/deepseek-ai/-R1)
 
-The DeepSeek V3 is a mixture of expert (MoE) model.
+The V3 is a mixture of expert (MoE) model.
 
 ```
 ./mistralrs-server --isq 4 -i plain -m deepseek-ai/DeepSeek-R1
