@@ -7,7 +7,7 @@ This works with all models that support [tool calling](TOOL_CALLING.md). However
 - Hermes 3 3b/8b
 - Mistral 3 24b
 - Llama 4 Scout/Maverick
-- Qwen 3 (⭐ Recommended!)
+- 3 (⭐ Recommended!)
 
 Web search is supported both in streaming and completion responses! This makes it easy to integrate and test out in interactive mode!
 
