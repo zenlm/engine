@@ -1,3 +1,5 @@
+<p align="center"><img src=".github/hero.svg" alt="engine" width="880"></p>
+
 <a name="top"></a>
 <h1 align="center">
   Zen Engine
