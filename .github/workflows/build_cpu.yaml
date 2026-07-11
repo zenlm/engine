@@ -12,7 +12,7 @@ on:
 
 jobs:
     build-and-push-image:
-        runs-on: [ubuntu-latest]
+        runs-on: zenlm-build-linux-amd64
         permissions:
             contents: write
             packages: write

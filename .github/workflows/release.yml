@@ -17,7 +17,7 @@ permissions:
 jobs:
   build-and-test:
     name: Build and Test
-    runs-on: ubuntu-latest
+    runs-on: zenlm-build-linux-amd64
 
     steps:
     - uses: actions/checkout@v4
@@ -128,7 +128,7 @@ jobs:
   create-release:
     name: Create Release
     needs: build-binaries
-    runs-on: ubuntu-latest
+    runs-on: zenlm-build-linux-amd64
 
     steps:
     - uses: actions/checkout@v4
@@ -173,7 +173,7 @@ jobs:
   publish-docker:
     name: Publish Docker Image
     needs: build-and-test
-    runs-on: ubuntu-latest
+    runs-on: zenlm-build-linux-amd64
 
     steps:
     - uses: actions/checkout@v4

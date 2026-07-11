@@ -54,7 +54,7 @@ jobs:
 
   fmt:
     name: Rustfmt
-    runs-on: ubuntu-latest
+    runs-on: zenlm-build-linux-amd64
     steps:
       - uses: actions/checkout@v4
       - uses: actions-rs/toolchain@v1
@@ -70,7 +70,7 @@ jobs:
 
   clippy:
     name: Clippy
-    runs-on: ubuntu-latest
+    runs-on: zenlm-build-linux-amd64
     steps:
       - uses: actions/checkout@v4
       - uses: actions-rs/toolchain@v1
@@ -86,7 +86,7 @@ jobs:
 
   docs:
     name: Docs
-    runs-on: ubuntu-latest
+    runs-on: zenlm-build-linux-amd64
     steps:
       - uses: actions/checkout@v4
       - uses: actions-rs/toolchain@v1
@@ -101,7 +101,7 @@ jobs:
 
   hanzo-engine:
     name: Build Hanzo Engine
-    runs-on: ubuntu-latest
+    runs-on: zenlm-build-linux-amd64
     steps:
       - uses: actions/checkout@v4
       - uses: actions-rs/toolchain@v1
@@ -120,7 +120,7 @@ jobs:
 
   typos:
     name: Typos
-    runs-on: ubuntu-latest
+    runs-on: zenlm-build-linux-amd64
     steps:
       - uses: actions/checkout@v4
       - uses: actions-rs/toolchain@v1
@@ -135,7 +135,7 @@ jobs:
 
   msrv:
     name: MSRV Check (1.86)
-    runs-on: ubuntu-latest
+    runs-on: zenlm-build-linux-amd64
     steps:
       - uses: actions/checkout@v4
       - uses: actions-rs/toolchain@v1
@@ -150,7 +150,7 @@ jobs:
   
   # run `mlc` (`cargo install mlc`)
   # markdown-link-check:
-  #   runs-on: ubuntu-latest
+  #   runs-on: zenlm-build-linux-amd64
   #   steps:
   #     - uses: actions/checkout@v4
   #     - uses: gaurav-nelson/github-action-markdown-link-check@v1

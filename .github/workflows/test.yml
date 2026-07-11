@@ -8,7 +8,7 @@ on:
 
 jobs:
   fmt:
-    runs-on: ubuntu-latest
+    runs-on: zenlm-build-linux-amd64
     steps:
     - uses: actions/checkout@v3
 
@@ -23,7 +23,7 @@ jobs:
       run: cargo fmt --all -- --check
 
   clippy:
-    runs-on: ubuntu-latest
+    runs-on: zenlm-build-linux-amd64
     steps:
     - uses: actions/checkout@v3
 
@@ -49,7 +49,7 @@ jobs:
       run: cargo clippy --workspace --tests -- -D warnings
 
   test-linux:
-    runs-on: ubuntu-latest
+    runs-on: zenlm-build-linux-amd64
     strategy:
       matrix:
         rust: [stable, nightly]
@@ -105,7 +105,7 @@ jobs:
       run: cargo test --workspace --features metal
 
   build-release:
-    runs-on: ubuntu-latest
+    runs-on: zenlm-build-linux-amd64
     steps:
     - uses: actions/checkout@v3
 
